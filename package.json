@@ -1,0 +1,17 @@
+{
+  "name": "n8n-nodes-nessus-scan",
+  "version": "1.0.0",
+  "description": "Custom n8n node for interacting with Nessus API",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "n8n-core": "^2.16.1",
+    "n8n-workflow": "^0.108.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateUrlSignature = generateUrlSignature;
+exports.prepareUrlForSigning = prepareUrlForSigning;
+exports.validateUrlSignature = validateUrlSignature;
+const crypto_1 = require("crypto");
+const constants_1 = require("../constants");
+function generateUrlSignature(url, secret) {
+    return (0, crypto_1.createHmac)('sha256', secret).update(url).digest('hex');
+}
+function prepareUrlForSigning(url) {
+    const urlForSigning = new URL(url.toString());
+    urlForSigning.searchParams.delete(constants_1.WAITING_TOKEN_QUERY_PARAM);
+    return `${urlForSigning.pathname}${urlForSigning.search}`;
+}
+function validateUrlSignature(providedSignature, url, secret) {
+    const urlString = prepareUrlForSigning(url);
+    const expectedSignature = generateUrlSignature(urlString, secret);
+    if (providedSignature.length !== expectedSignature.length) {
+        return false;
+    }
+    return (0, crypto_1.timingSafeEqual)(Buffer.from(providedSignature), Buffer.from(expectedSignature));
+}
+//# sourceMappingURL=signature-helpers.js.map

@@ -1,0 +1,3 @@
+export declare function generateUrlSignature(url: string, secret: string): string;
+export declare function prepareUrlForSigning(url: URL): string;
+export declare function validateUrlSignature(providedSignature: string, url: URL, secret: string): boolean;

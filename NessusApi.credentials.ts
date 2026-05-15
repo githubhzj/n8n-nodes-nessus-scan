@@ -1,11 +1,13 @@
 import {
     ICredentialType,
     INodeProperties,
+    Icon,
 } from 'n8n-workflow';
 
 export class NessusApi implements ICredentialType {
     name = 'nessusApi';
     displayName = 'Nessus API';
+    icon: Icon = { light: 'file:icon.svg', dark: 'file:icon.dark.svg' };
     documentationUrl = 'https://docs.tenable.com/nessus/Content/GettingStarted.htm';
     properties: INodeProperties[] = [
         {

@@ -44,7 +44,7 @@ class Nessus {
         this.description = {
             displayName: 'Nessus',
             name: 'nessus',
-            icon: 'file:icon.svg',
+            icon: { light: 'file:icon.svg', dark: 'file:icon.dark.svg' },
             group: ['transform'],
             version: 1,
             description: 'Interact with Nessus API',
@@ -53,6 +53,7 @@ class Nessus {
             },
             inputs: ['main'],
             outputs: ['main'],
+            usableAsTool: true,
             credentials: [
                 {
                     name: 'nessusApi',

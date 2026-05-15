@@ -5,6 +5,7 @@ class NessusApi {
     constructor() {
         this.name = 'nessusApi';
         this.displayName = 'Nessus API';
+        this.icon = { light: 'file:icon.svg', dark: 'file:icon.dark.svg' };
         this.documentationUrl = 'https://docs.tenable.com/nessus/Content/GettingStarted.htm';
         this.properties = [
             {

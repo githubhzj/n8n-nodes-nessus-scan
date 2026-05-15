@@ -12,7 +12,7 @@ export class Nessus implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'Nessus',
         name: 'nessus',
-        icon: 'file:icon.svg',
+        icon: { light: 'file:icon.svg', dark: 'file:icon.dark.svg' },
         group: ['transform'],
         version: 1,
         description: 'Interact with Nessus API',
@@ -21,6 +21,7 @@ export class Nessus implements INodeType {
         },
         inputs: ['main'],
         outputs: ['main'],
+        usableAsTool: true,
         credentials: [
             {
                 name: 'nessusApi',

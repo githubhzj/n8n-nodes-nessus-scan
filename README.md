@@ -1,48 +1,66 @@
 # n8n-nodes-nessus-scan
 
-This is a custom n8n node for interacting with the Nessus API. It allows you to:
+这是一个用于对接 Nessus API 的自定义 n8n 节点。它支持以下功能：
 
-1. **Create Scan**: Create a new vulnerability scan for a specific IP address.
-2. **Get Scan Status**: Retrieve the status of an existing scan.
+1. **创建扫描**：为指定的 IP 地址创建新的漏洞扫描任务。
+2. **获取扫描状态**：查询已有扫描任务的执行状态。
 
-## Installation
+---
 
-1. Place the `n8n-nodes-nessus-scan` folder in your n8n custom nodes directory.
-2. Restart your n8n instance.
+## 安装方式
 
-## Credentials
+1. 将 `n8n-nodes-nessus-scan` 文件夹放置到 n8n 的自定义节点目录中。
+2. 重启 n8n 实例即可生效。
 
-This node requires the following credentials:
+---
 
-- **Nessus URL**: The base URL of your Nessus server (e.g., `https://<your-nessus-server>:8834`).
-- **API Token**: Your Nessus API token.
-- **Access Key**: Your Nessus access key.
-- **Secret Key**: Your Nessus secret key.
+## 所需凭证
 
-## Operations
+使用本节点需要配置以下凭证信息：
 
-### Create Scan
+| 凭证项 | 说明 | 示例 |
+|--------|------|------|
+| **Nessus URL** | Nessus 服务器的基础地址 | `https://<你的Nessus服务器>:8834` |
+| **API Token** | Nessus API 令牌 | — |
+| **Access Key** | Nessus 访问密钥 | — |
+| **Secret Key** | Nessus 密钥 | — |
 
-- **IP Address**: The target IP address for the scan.
-- **Template ID**: The UUID of the scan template.
-- **Folder ID**: The folder ID where the scan will be saved.
+---
 
-### Get Scan Status
+## 操作说明
 
-- **Scan ID**: The ID of the scan to retrieve the status for.
+### 🔹 创建扫描
 
-## Example Usage
+| 参数 | 说明 |
+|------|------|
+| **IP 地址** | 扫描目标的 IP 地址 |
+| **模板 ID** | 扫描模板的 UUID |
+| **文件夹 ID** | 扫描任务保存的目标文件夹 ID |
 
-1. Add the Nessus node to your workflow.
-2. Select the operation (e.g., `Create Scan` or `Get Scan Status`).
-3. Provide the required parameters.
-4. Execute the workflow.
+### 🔹 获取扫描状态
 
-## Notes
+| 参数 | 说明 |
+|------|------|
+| **扫描 ID** | 需要查询状态的扫描任务 ID |
 
-- Ensure your Nessus server is accessible from the n8n instance.
-- Handle sensitive credentials securely.
+---
 
-## License
+## 使用示例
+
+1. 在工作流中添加 Nessus 节点。
+2. 选择所需操作（如「创建扫描」或「获取扫描状态」）。
+3. 填写对应的参数信息。
+4. 执行工作流即可。
+
+---
+
+## 注意事项
+
+- ⚠️ 请确保 n8n 实例能够正常访问你的 Nessus 服务器。
+- 🔐 请妥善保管敏感凭证信息，避免泄露。
+
+---
+
+## 许可证
 
 MIT

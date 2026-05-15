@@ -9,8 +9,29 @@
 
 ## 安装方式
 
+<<<<<<< HEAD
 1. 将 `n8n-nodes-nessus-scan` 文件夹放置到 n8n 的自定义节点目录中。
 2. 重启 n8n 实例即可生效。
+=======
+## 安装node到你的环境
+3. 以 n8n-nodes-checkpoint-main.zip 为例 
+1. 上传自定义nodes文件到运行n8n的服务器上
+2. 解压文件 unzip n8n-nodes-checkpoint-main.zip
+3. 重命名 mv n8n-nodes-checkpoint-main n8n-nodes-checkpoint
+4. 使用docker cp 命令将nodes解压后的所有文件放到指定目录下
+docker cp n8n-nodes-checkpoint n8n:/home/node/.n8n/custom/
+5. 重启n8n容器服务 docker restart n8n
+6. 在前端创建workflow 添加node搜索checkpoint
+7. 添加防火墙认证信息
+8. 选择动作填写信息测试
+如果需要进入容器内部查看文件：
+docker exec -it n8n sh
+cd .n8n/custom 进入自定义目录
+ls 查看
+exit 退出容器
+
+## Credentials
+>>>>>>> af5f9e1332c789e64034729e717e7b0a67054b25
 
 ---
 
@@ -47,6 +68,7 @@
 
 ## 使用示例
 
+<<<<<<< HEAD
 1. 在工作流中添加 Nessus 节点。
 2. 选择所需操作（如「创建扫描」或「获取扫描状态」）。
 3. 填写对应的参数信息。
@@ -63,4 +85,6 @@
 
 ## 许可证
 
+=======
+>>>>>>> af5f9e1332c789e64034729e717e7b0a67054b25
 MIT
